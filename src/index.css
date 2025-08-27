@@ -122,5 +122,43 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    /* Prevent zoom on mobile when focusing inputs */
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    /* Prevent layout shift when virtual keyboard appears */
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  #root {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  /* Prevent zoom on input focus for iOS Safari */
+  input[type="text"],
+  input[type="email"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="url"],
+  input[type="password"],
+  textarea,
+  select {
+    font-size: 16px !important;
+    transform-origin: left top;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  /* Ensure proper viewport behavior on mobile */
+  @supports (-webkit-touch-callout: none) {
+    body {
+      /* iOS Safari specific fixes */
+      -webkit-overflow-scrolling: touch;
+    }
   }
 }

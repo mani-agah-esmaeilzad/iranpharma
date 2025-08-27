@@ -18,7 +18,7 @@ const Index = () => {
   }, [messages, isTyping]);
 
   return (
-    <div className="h-screen flex flex-col bg-gradient-bg" dir="rtl">
+    <div className="h-full flex flex-col bg-gradient-bg" dir="rtl">
       <Header />
       
       <div className="flex-1 flex flex-col px-2 sm:px-4 py-2 overflow-hidden min-h-0">
