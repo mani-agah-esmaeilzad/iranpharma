@@ -30,7 +30,7 @@ export const ChatInput = ({ onSendMessage, disabled = false, value, onChange }: 
   };
 
   return (
-    <div className="space-y-2 sm:space-y-3">
+    <div className="space-y-2 sm:space-y-3 w-full">
       {/* Suggested Prompts Toggle */}
       <div className="flex justify-center">
         <Button
@@ -48,7 +48,7 @@ export const ChatInput = ({ onSendMessage, disabled = false, value, onChange }: 
 
       {/* Suggested Prompts Dropdown */}
       {showSuggestions && (
-        <div className="bg-card border border-primary/10 rounded-lg p-3 sm:p-4 shadow-soft max-h-60 overflow-y-auto">
+        <div className="bg-card border border-primary/10 rounded-lg p-2 sm:p-3 md:p-4 shadow-soft max-h-48 sm:max-h-60 overflow-y-auto">
           <SuggestedPrompts 
             onPromptClick={(prompt) => {
               onSendMessage(prompt);
@@ -60,20 +60,20 @@ export const ChatInput = ({ onSendMessage, disabled = false, value, onChange }: 
       )}
 
       {/* Input Form */}
-      <form onSubmit={handleSubmit} className="flex gap-2">
+      <form onSubmit={handleSubmit} className="flex gap-1 sm:gap-2 w-full">
         <Input
           value={inputValue}
           onChange={handleInputChange}
           placeholder="سؤال خود را بپرسید..."
           disabled={disabled}
-          className="flex-1 text-right bg-background border-primary/20 focus:border-primary text-sm sm:text-base"
+          className="flex-1 min-w-0 text-right bg-background border-primary/20 focus:border-primary text-sm sm:text-base h-9 sm:h-10"
           dir="rtl"
         />
         <Button
           type="submit"
           size="icon"
           disabled={disabled || !inputValue.trim()}
-          className="bg-primary hover:bg-primary-glow shadow-soft h-9 w-9 sm:h-10 sm:w-10"
+          className="bg-primary hover:bg-primary-glow shadow-soft h-9 w-9 sm:h-10 sm:w-10 flex-shrink-0"
         >
           <Send className="w-3 h-3 sm:w-4 sm:h-4" />
         </Button>
