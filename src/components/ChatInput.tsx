@@ -30,7 +30,7 @@ export const ChatInput = ({ onSendMessage, disabled = false, value, onChange }: 
   };
 
   return (
-    <div className="space-y-2 sm:space-y-3 w-full">
+    <div className="space-y-2 sm:space-y-3 lg:space-y-4 w-full">
       {/* Suggested Prompts Toggle */}
       <div className="flex justify-center">
         <Button
@@ -38,17 +38,17 @@ export const ChatInput = ({ onSendMessage, disabled = false, value, onChange }: 
           variant="ghost"
           size="sm"
           onClick={() => setShowSuggestions(!showSuggestions)}
-          className="text-muted-foreground hover:text-foreground transition-colors text-xs sm:text-sm"
+          className="text-muted-foreground hover:text-foreground transition-colors text-xs sm:text-sm lg:text-base"
           disabled={disabled}
         >
-          <Lightbulb className="w-3 h-3 sm:w-4 sm:h-4 ml-1 sm:ml-2" />
+          <Lightbulb className="w-3 h-3 sm:w-4 sm:h-4 lg:w-5 lg:h-5 ml-1 sm:ml-2" />
           <span>پرسش‌های پیشنهادی</span>
         </Button>
       </div>
 
       {/* Suggested Prompts Dropdown */}
       {showSuggestions && (
-        <div className="bg-card border border-primary/10 rounded-lg p-2 sm:p-3 md:p-4 shadow-soft max-h-48 sm:max-h-60 overflow-y-auto">
+        <div className="bg-card border border-primary/10 rounded-lg p-2 sm:p-3 lg:p-4 xl:p-5 shadow-soft max-h-48 sm:max-h-60 lg:max-h-72 overflow-y-auto">
           <SuggestedPrompts 
             onPromptClick={(prompt) => {
               onSendMessage(prompt);
@@ -60,22 +60,22 @@ export const ChatInput = ({ onSendMessage, disabled = false, value, onChange }: 
       )}
 
       {/* Input Form */}
-      <form onSubmit={handleSubmit} className="flex gap-1 sm:gap-2 w-full">
+      <form onSubmit={handleSubmit} className="flex gap-1 sm:gap-2 lg:gap-3 w-full">
         <Input
           value={inputValue}
           onChange={handleInputChange}
           placeholder="سؤال خود را بپرسید..."
           disabled={disabled}
-          className="flex-1 min-w-0 text-right bg-background border-primary/20 focus:border-primary text-sm sm:text-base h-9 sm:h-10"
+          className="flex-1 min-w-0 text-right bg-background border-primary/20 focus:border-primary text-sm sm:text-base lg:text-lg h-9 sm:h-10 lg:h-12"
           dir="rtl"
         />
         <Button
           type="submit"
           size="icon"
           disabled={disabled || !inputValue.trim()}
-          className="bg-primary hover:bg-primary-glow shadow-soft h-9 w-9 sm:h-10 sm:w-10 flex-shrink-0"
+          className="bg-primary hover:bg-primary-glow shadow-soft h-9 w-9 sm:h-10 sm:w-10 lg:h-12 lg:w-12 flex-shrink-0"
         >
-          <Send className="w-3 h-3 sm:w-4 sm:h-4" />
+          <Send className="w-3 h-3 sm:w-4 sm:h-4 lg:w-5 lg:h-5" />
         </Button>
       </form>
     </div>

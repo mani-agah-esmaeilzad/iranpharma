@@ -21,10 +21,10 @@ const Index = () => {
     <div className="h-full flex flex-col bg-gradient-bg" dir="rtl">
       <Header />
       
-      <div className="flex-1 flex flex-col px-2 sm:px-4 py-2 overflow-hidden min-h-0">
-        <div className="flex-1 flex flex-col bg-card rounded-lg sm:rounded-xl shadow-soft border border-primary/10 overflow-hidden min-h-0">
+      <div className="flex-1 flex flex-col px-2 sm:px-4 lg:px-6 xl:px-8 py-2 lg:py-3 overflow-hidden min-h-0">
+        <div className="flex-1 flex flex-col bg-card rounded-lg sm:rounded-xl lg:rounded-2xl shadow-soft border border-primary/10 overflow-hidden min-h-0 max-w-7xl mx-auto w-full">
           {/* Chat Messages Area */}
-          <div className="flex-1 overflow-y-auto p-2 sm:p-4 md:p-6 space-y-3 sm:space-y-4 bg-gradient-to-b from-background/50 to-background min-h-0">
+          <div className="flex-1 overflow-y-auto p-2 sm:p-4 lg:p-6 xl:p-8 space-y-3 sm:space-y-4 lg:space-y-6 bg-gradient-to-b from-background/50 to-background min-h-0">
             {messages.map((message) => (
               <ChatMessage
                 key={message.id}
@@ -39,7 +39,7 @@ const Index = () => {
           </div>
 
           {/* Input Section */}
-          <div className="border-t border-primary/10 p-2 sm:p-3 md:p-4 bg-background/50 flex-shrink-0">
+          <div className="border-t border-primary/10 p-2 sm:p-3 lg:p-4 xl:p-6 bg-background/50 flex-shrink-0">
             <ChatInput 
               onSendMessage={sendMessage} 
               disabled={isTyping}
