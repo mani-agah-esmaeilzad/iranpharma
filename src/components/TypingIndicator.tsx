@@ -1,3 +1,5 @@
+"use client"
+
 export const TypingIndicator = () => {
   return (
     <div className="flex gap-2 sm:gap-3 lg:gap-4 animate-fade-in">

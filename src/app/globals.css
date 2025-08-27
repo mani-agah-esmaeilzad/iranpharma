@@ -1,0 +1,164 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 250 50% 98%;
+    --foreground: 186 100% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 186 100% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 186 100% 15%;
+
+    --primary: 186 100% 25%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 186 80% 35%;
+    --primary-light: 186 60% 85%;
+
+    --secondary: 186 30% 90%;
+    --secondary-foreground: 186 100% 20%;
+
+    --muted: 186 20% 95%;
+    --muted-foreground: 186 30% 45%;
+
+    --accent: 186 40% 88%;
+    --accent-foreground: 186 100% 20%;
+
+    --chat-bubble: 186 100% 25%;
+    --chat-bubble-foreground: 0 0% 100%;
+    --chat-user: 186 20% 95%;
+    --chat-user-foreground: 186 100% 20%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-bg: linear-gradient(180deg, hsl(var(--background)), hsl(var(--primary-light)));
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(var(--primary) / 0.1);
+    --shadow-glow: 0 0 30px hsl(var(--primary-glow) / 0.2);
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 186 60% 8%;
+    --foreground: 186 30% 90%;
+
+    --card: 186 50% 12%;
+    --card-foreground: 186 30% 90%;
+
+    --popover: 186 50% 12%;
+    --popover-foreground: 186 30% 90%;
+
+    --primary: 186 80% 60%;
+    --primary-foreground: 186 60% 8%;
+    --primary-glow: 186 70% 50%;
+    --primary-light: 186 40% 20%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    /* Prevent zoom on mobile when focusing inputs */
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    /* Prevent layout shift when virtual keyboard appears */
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  #__next {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  /* Prevent zoom on input focus for iOS Safari */
+  input[type="text"],
+  input[type="email"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="url"],
+  input[type="password"],
+  textarea,
+  select {
+    font-size: 16px !important;
+    transform-origin: left top;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  /* Ensure proper viewport behavior on mobile */
+  @supports (-webkit-touch-callout: none) {
+    body {
+      /* iOS Safari specific fixes */
+      -webkit-overflow-scrolling: touch;
+    }
+  }
+}

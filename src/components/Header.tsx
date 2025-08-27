@@ -1,6 +1,9 @@
+"use client"
+
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -10,9 +13,11 @@ export const Header = () => {
       <div className="container mx-auto px-3 sm:px-4 lg:px-6 py-3 sm:py-4 lg:py-6">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2 sm:gap-3 lg:gap-4">
-            <img 
-              src="/lovable-uploads/49a2cc1a-619f-4ae4-9f1d-f0212b994ca8.png" 
+            <Image 
+              src="/iranpharma-logo.png" 
               alt="IranPharma" 
+              width={56}
+              height={56}
               className="h-8 sm:h-10 lg:h-12 xl:h-14 w-auto object-contain"
             />
             <div className="text-right">
